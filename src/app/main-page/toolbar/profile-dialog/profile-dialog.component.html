@@ -1,0 +1,604 @@
+<h2 mat-dialog-title>
+  <b>{{ user.FormalName }}</b>
+</h2>
+<mat-dialog-content>
+  <div
+    class="container"
+    fxLayout="column"
+    fxLayout.xs="column"
+    fxLayoutWrap
+    fxLayoutGap="0.5%"
+    fxLayoutAlign="center"
+  >
+    <mat-tab-group
+      [selectedIndex]="selectedTab"
+      (selectedTabChange)="onTabChanged($event)"
+    >
+      <mat-tab label="Information">
+        <div class="bootstrap-wrapper">
+          <div class="row">
+            <div class="mt-20"></div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="col width-100 p-0 ml-15">
+                <span class="header-text-0 ml--25"> General Info: </span>
+                <div class="row">
+                  <div class="mt-30"></div>
+                </div>
+                <div class="pl_25">
+                  <div class="row">
+                    <b>Full Name :</b>&nbsp;{{
+                      user.FormalName ? user.FormalName : "-"
+                    }}
+                  </div>
+                  <div class="row">
+                    <div class="mt-15"></div>
+                  </div>
+                  <div class="row">
+                    <b>User Name :</b>&nbsp;{{
+                      user.UserName ? user.UserName : "-"
+                    }}
+                  </div>
+                  <div class="row">
+                    <div class="mt-15"></div>
+                  </div>
+                  <div class="row">
+                    <b>User Email :</b>&nbsp;{{ user.Email ? user.Email : "-" }}
+                  </div>
+                  <div class="row">
+                    <div class="mt-15"></div>
+                  </div>
+                  <div class="row">
+                    <b>User Phone :</b>&nbsp;{{
+                      user.CellPhone ? user.CellPhone : "-"
+                    }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="col width-100 p-0">
+                <span class="header-text-0"> Account Info: </span>
+                <div class="row">
+                  <div class="mt-30"></div>
+                </div>
+                <div class="pl-25">
+                  <div class="row">
+                    <b>Account Name :</b>&nbsp;{{
+                      user.AccountName ? user.AccountName : "-"
+                    }}
+                  </div>
+                  <div class="row">
+                    <div class="mt-15"></div>
+                  </div>
+                  <div class="row">
+                    <b>Role Name :</b>&nbsp;{{
+                      user.RoleName ? user.RoleName : "-"
+                    }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div></mat-tab
+      >
+      <mat-tab label="Edit Information"
+        ><div class="bootstrap-wrapper">
+          <div class="row">
+            <div class="mt-20"></div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="row">
+                <span class="header-text">General Info:</span>
+              </div>
+              <div class="row">
+                <div class="mt-20"></div>
+              </div>
+              <div class="ml-15">
+                <div class="row">
+                  <div class="col-2 mt-5">
+                    <div class="mt-20"></div>
+                    <span>User Name</span>
+                  </div>
+                  <div class="col-6 mt--10">
+                    <mat-form-field class="width-75 mb--25">
+                      <input
+                        matInput
+                        [formControl]="userName"
+                        [value]="user.UserName"
+                        readonly="true"
+                        required
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-2 mt-5">
+                    <div class="mt-20"></div>
+                    <span>Full Name</span>
+                  </div>
+                  <div class="col-6 mt--10">
+                    <mat-form-field class="width-75 mb--25">
+                      <input
+                        class="w-95"
+                        matInput
+                        [formControl]="formalName"
+                        [value]="user.FormalName"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-2 mt-5">
+                    <div class="mt-20"></div>
+                    <span>User Email</span>
+                  </div>
+                  <div class="col-6 mt--10">
+                    <mat-form-field class="width-75 mb--25">
+                      <input
+                        matInput
+                        [formControl]="email"
+                        [value]="user.Email"
+                        required
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-2 mt-5">
+                    <div class="mt-20"></div>
+                    <span>User Phone</span>
+                  </div>
+                  <div class="col-6 mt--10">
+                    <mat-form-field class="width-75 mb--25">
+                      <input
+                        matInput
+                        [formControl]="cellPhone"
+                        [value]="user.CellPhone"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Change Password">
+        <div class="bootstrap-wrapper">
+          <div class="row">
+            <div class="mt-20"></div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="row">
+                <span class="header-text">Change Password:</span>
+              </div>
+              <div class="ml-15">
+                <div class="row">
+                  <div class="mt-20"></div>
+                </div>
+                <div class="row">
+                  <div class="col-3 mt-5">
+                    <div class="mt-20"></div>
+                    <span>Current Password</span>
+                  </div>
+                  <div class="col-6 mt--10">
+                    <mat-form-field class="width-75 mb--25">
+                      <input
+                        matInput
+                        [formControl]="oldPassword"
+                        type="Password"
+                        required
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3 mt-5">
+                    <div class="mt-20"></div>
+                    <span>New Password</span>
+                  </div>
+                  <div class="col-6 mt--10">
+                    <mat-form-field class="width-75 mb--25">
+                      <input
+                        (input)="
+                          trueConfirm(
+                            passwordRef.value,
+                            confirmPasswordRef.value
+                          )
+                        "
+                        required
+                        matInput="password"
+                        type="Password"
+                        #passwordRef
+                      />
+                    </mat-form-field>
+                    <div class="trueLabel">
+                      <div id="truePass" class="trigger"></div>
+                      <svg
+                        version="1.1"
+                        id="tick"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 37 37"
+                        style="enable-background: new 0 0 37 37"
+                        xml:space="preserve"
+                      >
+                        <path
+                          class="circ path"
+                          style="
+                            fill: none;
+                            stroke: darkslategrey;
+                            stroke-width: 3;
+                            stroke-linejoin: round;
+                            stroke-miterlimit: 10;
+                          "
+                          d="M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z"
+                        />
+                        <polyline
+                          class="tick path"
+                          style="
+                            fill: none;
+                            stroke: darkslategrey;
+                            stroke-width: 3;
+                            stroke-linejoin: round;
+                            stroke-miterlimit: 10;
+                          "
+                          points="11.6,20 15.9,24.2 26.4,13.8 "
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3 mt-5">
+                    <div class="mt-20"></div>
+                    <span>Repeat Password</span>
+                  </div>
+                  <div class="col-6 mt--10">
+                    <mat-form-field class="width-75 mb--25">
+                      <input
+                        (input)="
+                          truePass(passwordRef.value, confirmPasswordRef.value)
+                        "
+                        required
+                        matInput="password"
+                        type="Password"
+                        #confirmPasswordRef
+                      />
+                    </mat-form-field>
+                    <div class="trueLabel">
+                      <div id="trueConfirm" class="trigger"></div>
+                      <svg
+                        version="1.1"
+                        id="tick"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 37 37"
+                        style="enable-background: new 0 0 37 37"
+                        xml:space="preserve"
+                      >
+                        <path
+                          class="circ path"
+                          style="
+                            fill: none;
+                            stroke: darkslategrey;
+                            stroke-width: 3;
+                            stroke-linejoin: round;
+                            stroke-miterlimit: 10;
+                          "
+                          d="M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z"
+                        />
+                        <polyline
+                          class="tick path"
+                          style="
+                            fill: none;
+                            stroke: darkslategrey;
+                            stroke-width: 3;
+                            stroke-linejoin: round;
+                            stroke-miterlimit: 10;
+                          "
+                          points="11.6,20 15.9,24.2 26.4,13.8 "
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  <!-- <mat-card class="mat-elevation-z10 content">
+    <mat-card-content>
+      <mat-tab-group
+        [selectedIndex]="selectedTab"
+        class="tabs"
+        style="margin-top: -27px"
+      > -->
+  <!-- View Profile -->
+  <!-- <mat-tab>
+          <div class="flex-container" style="margin-top: 25px">
+            <div style="float: left">
+              <img
+                class="profile-image"
+                [src]="imageProfile()"
+                alt="{{ user.UserName }}"
+              />
+            </div>
+            <div class="user-detail">
+              <br />
+              <div>
+                <span>Full Name :</span>
+                <span>{{ user.FormalName }}</span>
+              </div>
+              <div>
+                <span>User Name :</span>
+                <span>{{ user.UserName }}</span>
+              </div>
+              <div>
+                <span>User Email :</span>
+                <span>{{ user.Email }}</span>
+              </div>
+              <div>
+                <span>User Phone :</span>
+                <span>{{ user.CellPhone ? user.CellPhone : "-" }}</span>
+              </div>
+              <hr />
+              <div>
+                <span>Account Name :</span>
+                <span>{{ user.AccountName ? user.AccountName : "-" }}</span>
+              </div>
+              <div>
+                <span>Role Name :</span>
+                <span>{{ user.RoleName ? user.RoleName : "-" }}</span>
+              </div>
+            </div>
+          </div>
+        </mat-tab> -->
+  <!-- Edit User -->
+  <!-- <mat-tab>
+          <div class="flex-container" style="margin-top: 25px">
+            <div style="float: left">
+              <img
+                class="profile-image"
+                [src]="imageProfile()"
+                alt="{{ user.UserName }}"
+              />
+            </div>
+            <div class="user-detail">
+              <br />
+              <div>
+                <mat-form-field>
+                  <input
+                    matInput
+                    [formControl]="formalName"
+                    placeholder="Full Name"
+                    [value]="user.FormalName"
+                  />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field>
+                  <input
+                    matInput
+                    [formControl]="userName"
+                    placeholder="User Name"
+                    [value]="user.UserName"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field>
+                  <input
+                    matInput
+                    [formControl]="email"
+                    placeholder="User Email"
+                    [value]="user.Email"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field>
+                  <input
+                    matInput
+                    [formControl]="cellPhone"
+                    placeholder="User Phone"
+                    [value]="user.CellPhone"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="errorDescription">
+            <span class="error">{{ errorDescription }}</span>
+          </div>
+        </mat-tab> -->
+  <!-- Change Password -->
+  <!-- <mat-tab>
+          <div class="flex-container" style="margin-top: 25px">
+            <div style="float: left">
+              <img
+                class="profile-image"
+                src="../../../../assets/password.png"
+                alt="password change"
+              />
+            </div>
+            <div class="user-detail">
+              <br />
+              <div>
+                <mat-form-field>
+                  <input
+                    matInput
+                    [formControl]="oldPassword"
+                    type="Password"
+                    placeholder="Current Password"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+
+              <div>
+                <mat-form-field fxFlex="100%" class="full-width">
+                  <input
+                    (input)="
+                      trueConfirm(passwordRef.value, confirmPasswordRef.value)
+                    "
+                    required
+                    matInput="password"
+                    placeholder="New Password"
+                    type="Password"
+                    #confirmPasswordRef
+                  />
+                </mat-form-field>
+
+                <div class="trueLabel">
+                  <div id="trueConfirm" class="trigger"></div>
+                  <svg
+                    version="1.1"
+                    id="tick"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 37 37"
+                    style="enable-background: new 0 0 37 37"
+                    xml:space="preserve"
+                  >
+                    <path
+                      class="circ path"
+                      style="
+                        fill: none;
+                        stroke: darkslategrey;
+                        stroke-width: 3;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                      "
+                      d="M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z"
+                    />
+                    <polyline
+                      class="tick path"
+                      style="
+                        fill: none;
+                        stroke: darkslategrey;
+                        stroke-width: 3;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                      "
+                      points="11.6,20 15.9,24.2 26.4,13.8 "
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <div>
+                <mat-form-field fxFlex="100%" class="full-width">
+                  <input
+                    (input)="
+                      truePass(passwordRef.value, confirmPasswordRef.value)
+                    "
+                    required
+                    matInput="password"
+                    placeholder="Repeat Password"
+                    type="Password"
+                    #passwordRef
+                  />
+                </mat-form-field>
+                <div class="trueLabel">
+                  <div id="truePass" class="trigger"></div>
+                  <svg
+                    version="1.1"
+                    id="tick"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 37 37"
+                    style="enable-background: new 0 0 37 37"
+                    xml:space="preserve"
+                  >
+                    <path
+                      class="circ path"
+                      style="
+                        fill: none;
+                        stroke: darkslategrey;
+                        stroke-width: 3;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                      "
+                      d="M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z"
+                    />
+                    <polyline
+                      class="tick path"
+                      style="
+                        fill: none;
+                        stroke: darkslategrey;
+                        stroke-width: 3;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                      "
+                      points="11.6,20 15.9,24.2 26.4,13.8 "
+                    />
+                  </svg>
+                </div>
+              </div>
+              <label id="passLabel"></label>
+            </div>
+          </div>
+          <div *ngIf="errorDescription">
+            <span class="error">{{ errorDescription }}</span>
+          </div>
+        </mat-tab> -->
+  <!-- </mat-tab-group>
+    </mat-card-content>
+  </mat-card> -->
+</mat-dialog-content>
+<mat-dialog-actions class="right">
+  <!-- <button mat-button (click)="cancelUpdate()">
+    {{ selectedTab == 0 ? "Close" : "Cancel" }}
+  </button>
+  <button
+    mat-button
+    (click)="editUser()"
+    *ngIf="selectedTab == 0 || selectedTab == 1"
+  >
+    {{ selectedTab == 0 ? "Edit" : "Update" }}
+  </button>
+  <button
+    mat-button
+    (click)="changePassword(passwordRef.value, confirmPasswordRef.value)"
+    *ngIf="selectedTab == 0 || selectedTab == 2"
+  >
+    {{ selectedTab == 0 ? "Change Password" : "Update" }}
+  </button>
+  <mat-spinner
+    *ngIf="operationProcess"
+    diameter="40"
+    style="float: right"
+  ></mat-spinner> -->
+  <div>
+    <button
+      *ngIf="selectedTab != 0"
+      mat-button
+      class="right seach-btn"
+      (click)="editUser(passwordRef.value, confirmPasswordRef.value)"
+    >
+      Save
+    </button>
+
+    <button mat-button class="right">
+      <span class="clear-filter" (click)="closeDialog()"> Cancel </span>
+    </button>
+  </div>
+</mat-dialog-actions>

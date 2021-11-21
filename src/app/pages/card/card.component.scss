@@ -1,0 +1,39 @@
+.img {
+  width: 150px;
+  margin-right: 30px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  .card-header {
+    display: flex;
+    border-bottom: 1px solid;
+    margin: 20px;
+    h4{
+      margin: 10px;
+      color: #707070;
+    }
+  }
+  .card-image {
+    display: flex;
+    img{
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      border-radius: 6%;
+    }
+  }
+}
+.colomn {
+  width: 200px;
+  margin-right: 30px;
+}
+
+mat-card {
+  border-left: 5px solid #ff0000;
+  border-radius: 8px;
+  margin: 25px;
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: row;
+}

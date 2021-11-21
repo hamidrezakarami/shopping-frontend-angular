@@ -1,0 +1,240 @@
+.align-items-center {
+  -webkit-box-align: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.justify-content-center {
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+}
+
+.width-75 {
+  width: 75%;
+}
+
+.property_form {
+  padding: 30px;
+  background: rgb(255 255 255 / 64%);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+.single-field.max_width {
+  margin-right: 24px;
+}
+
+select {
+  text-transform: none;
+}
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.slider_bg_1 {
+  background-image: url(../../../../assets/searchbar/h&n.jpg);
+}
+.slider_area .single_slider {
+  height: 712px;
+  width: 120%;
+  margin-left: -10%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.slider_text h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 70px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-weight: 600;
+  line-height: 70px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.single_slider .slider_text p {
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 24px;
+  margin-top: 10px;
+}
+.slider_area::before {
+  background: #001d38;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  opacity: 0.6;
+}
+
+// <------------------------ material ------------------------>
+.ng5-slider-pointer {
+  background-color: #fdad5c !important;
+}
+.ng5-slider-active::after {
+  background-color: #fd8f5e !important;
+}
+.ng5-slider .ng5-slider-bubble {
+  color: whitesmoke !important;
+}
+.ng5-slider .ng5-slider-selection {
+  background: #fdad5c !important;
+}
+.mat-form-field-label {
+  color: #fdad5c !important;
+}
+.mat-select-arrow {
+  color: #fdad5c !important;
+}
+.mat-select-value {
+  color: whitesmoke;
+}
+
+// <------------------------ End material ------------------------>
+// <------------------------ Start Search ------------------------>
+
+// search
+
+.search-font {
+  font-weight: bold;
+  font-size: larger;
+  width: 95%;
+  margin-top: 6px;
+}
+
+.search-box {
+  height: 50px;
+  clear: both;
+  z-index: 2;
+  display: flex;
+}
+
+.div-class {
+  margin: 0px;
+  padding: 0px !important;
+  box-shadow: none !important;
+}
+.search-input {
+  color: black;
+  margin-left: 5px;
+  width: 95%;
+}
+
+.clear-filter {
+  align-items: center;
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.25px;
+  background: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #5f6368;
+  cursor: pointer;
+  font-weight: 500;
+  height: 36px;
+  padding: 0 !important;
+  margin: 0 8px 0 0;
+  outline: none;
+}
+
+.seach-btn {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  outline: none;
+  position: relative;
+  z-index: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.25px;
+  background: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #5f6368;
+  cursor: pointer;
+  font-weight: 500;
+  height: 36px;
+  min-width: 80px;
+  outline: none;
+  padding: 0 16px;
+  background-color: #1a73e8;
+  color: #fff;
+  border: none;
+}
+
+.search-search {
+  margin-left: -3px;
+  margin-top: 7px;
+}
+
+.mat-expansion-panel-header.mat-expanded {
+  min-height: 48px;
+  height: fit-content;
+}
+
+.mat-form-field-underline {
+  background-color: #eceff1 !important;
+}
+
+.mat-expansion-panel-body {
+  padding: 11px 24px 16px !important;
+}
+
+.export-button {
+  z-index: 3;
+  background-color: white;
+  mat-icon {
+    font-size: 28px;
+    margin-left: -5px;
+    color: #1a73e8;
+  }
+}
+
+.bootstrap-wrapper {
+  .col-2 {
+    span {
+      font-size: 16px;
+      color: #61656a;
+    }
+  }
+}
+
+.bootstrap-wrapper {
+  .col {
+    span {
+      font-size: 16px;
+      color: #61656a;
+    }
+  }
+}
+
+.header-text {
+  color: #1a73e8;
+  font-size: large;
+}
+
+// // <------------------------ end Search ------------------------>

@@ -1,0 +1,30 @@
+<div class="backGround"></div>
+<div class="form ">
+<form [formGroup] = "loginForm">
+
+  <h1>Login</h1>
+  <mat-form-field class="user" >
+    <mat-label>Username</mat-label>
+    <input type="" formControlName="user" matInput required>
+    <mat-error>error </mat-error>
+  </mat-form-field>
+
+  <pre></pre>
+
+    <mat-form-field class="password" >
+      <mat-label>Password</mat-label>
+      <input type="password" formControlName="password" matInput required>
+      <mat-error>{{errors.name}}</mat-error>
+    </mat-form-field>
+
+    <button class= "loginBtn" (click)="loginReq()" mat-raised-button color="primary">Log in</button>
+    
+    <p class="forgot"><a href="#">Forgot Password?</a></p>
+  <footer>
+    <a routerLink="../search/home"
+      ><img src="https://hn-int.com/wp-content/uploads/2020/09/wp-favicon.png"
+    /></a>
+    <p>Design by <a routerLink="search/home">H&N</a></p>
+  </footer>
+</form> 
+</div>

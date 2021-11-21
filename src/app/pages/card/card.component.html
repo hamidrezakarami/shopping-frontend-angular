@@ -1,0 +1,13 @@
+<mat-card class="card" *ngFor="let card of cards">
+  <div class = "card-header">
+    <h4>ID: {{card._id}}</h4>
+    <h4>Status: {{card.status}}</h4>
+    <h4>ArrivaleDate: {{card.arrivalDate}}</h4>
+    <h4>Total Price: {{card.totalPrice}} $</h4>
+  </div>
+  <br>
+  <div class="card-image" >
+    <!-- {{product | json}} -->
+    <img *ngFor=" let product of card.products" [src]="product.imgUrls">
+  </div>
+</mat-card>

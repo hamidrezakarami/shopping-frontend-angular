@@ -1,0 +1,116 @@
+<mat-card class="search-box div-class">
+  <mat-accordion class="width-100">
+    <mat-expansion-panel
+      #expansionPanel
+      (opened)="expansion_onOpen(expansionPanel)"
+      (closed)="expansion_onClose(expansionPanel)"
+      hideToggle
+    >
+      <mat-expansion-panel-header
+        style="padding: 0 10px"
+        *ngIf="showSearchHeader"
+      >
+        <mat-icon class="search-search">search</mat-icon>
+        <input
+          class="search-input"
+          aria-label="Number"
+          matInput
+          placeholder="Product Name"
+          [(ngModel)]="viewState.name"
+        />
+        <button
+          mat-icon-button
+          class="export-button"
+          matTooltip="Filter and Advanced Search"
+        >
+          <mat-icon class="material-icons"> filter_alt </mat-icon>
+        </button>
+      </mat-expansion-panel-header>
+      <mat-expansion-panel-header *ngIf="!showSearchHeader">
+        <span class="search-font">Search/Filter by:</span>
+        <button
+          mat-icon-button
+          class="export-button"
+          matTooltip="Filter and Advanced Search"
+        >
+          <mat-icon class="material-icons"> filter_alt </mat-icon>
+        </button>
+      </mat-expansion-panel-header>
+
+      <div class="bootstrap-wrapper">
+        <div class="row header-text">
+          <span>Product Info:</span>
+        </div>
+        <div class="row pt-10">
+          <div class="col-6">
+            <div class="row center">
+              <div class="col-2">
+                <span>Product Name</span>
+              </div>
+              <div class="col">
+                <mat-form-field class="width-75">
+                  <input
+                    class="search-input"
+                    #searchInput
+                    matInput
+                    [(ngModel)]="viewState.name"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row center">
+              <div class="col-2">
+                <span>Sort By Price</span>
+              </div>
+              <div class="col ">
+                <mat-form-field appearance="fill" class="width-75 ">
+                  <mat-select [(ngModel)]="viewState.sortByPrice">
+                    <mat-option value="1"> Low To High </mat-option>
+                    <mat-option value="0"> High To Low </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row center">
+              <div class="col-1">
+                <span>Price</span>
+              </div>
+              <div class="col">
+                <div class="full-width">
+                  <ng5-slider
+                    *ngIf="viewState.rangeSlider"
+                    [(value)]="viewState.rangeSlider.minValue"
+                    [(highValue)]="viewState.rangeSlider.maxValue"
+                    [options]="viewState.rangeSlider.options"
+                  ></ng5-slider>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <mat-action-row>
+        <button mat-button class="right" (click)="OnClearFilter()">
+          <span class="clear-filter">Cancel</span>
+        </button>
+
+        <button mat-button (click)="OnSearchByFilter()" class="right seach-btn">
+          Search
+        </button>
+
+        <button
+          mat-button
+          (click)="expansionPanel.close()"
+          class="right clear-filter"
+        >
+          <mat-icon aria-label="Close Search" matTooltip="Close Search"
+            >expand_less</mat-icon
+          >
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>

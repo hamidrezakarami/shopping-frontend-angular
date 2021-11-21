@@ -1,0 +1,31 @@
+<div class="backGround"></div>
+<div class="form">
+  <h1>Sign Up</h1>
+  <div class="example-full-width" appearance="fill">
+    <input [(ngModel)]="username" placeholder="Username" required />
+  </div>
+  <pre></pre>
+  <div class="group">
+    <div class="example-full-width" appearance="fill">
+      <input [(ngModel)]="password" type="password" placeholder="Password" />
+    </div>
+
+    <div class="example-full-width" appearance="fill">
+      <input
+        [(ngModel)]="repassword"
+        type="password"
+        placeholder="Confirm Password"
+      />
+    </div>
+  </div>
+  <button type="button" (click)="addUserReq()" class="button buttonBlue">
+    Create Account
+    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+  </button>
+  <footer>
+    <a routerLink="search/home" target="_blank"
+      ><img src="https://hn-int.com/wp-content/uploads/2020/09/wp-favicon.png"
+    /></a>
+    <p>Design by <a routerLink="search/home" target="_blank">H&N</a></p>
+  </footer>
+</div>

@@ -1,0 +1,21 @@
+<div class="background"></div>
+<div class="pt-10"></div>
+<app-search-bar (onSearch)="getProducts($event)"></app-search-bar>
+<div class="f-w bootstrap-wrapper">
+  <div class="padding">
+    <div class="row section_title">
+      <div class="col mt-80">
+        <h3>H&N</h3>
+      </div>
+    </div>
+    <div class="row p-50">
+      <div
+        class="card col-xl-3 col-md-6 col-lg-4"
+        *ngFor="let product of products"
+        (click)="onClickCard(product)"
+      >
+        <app-home-card class="cursor_p" [product]="product"></app-home-card>
+      </div>
+    </div>
+  </div>
+</div>

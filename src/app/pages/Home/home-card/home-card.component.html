@@ -1,0 +1,21 @@
+<div class="single_property">
+  <div class="property_thumb">
+    <button matTooltip="Add" mat-mini-fab class="property_tag">
+      <mat-icon>add_shopping_cart</mat-icon>
+    </button>
+    <img src="{{ product.imgUrls }}" alt="" />
+  </div>
+  <div class="property_content">
+    <div class="main_pro">
+      <h2>
+        <a>
+          {{ product.name }}
+        </a>
+      </h2>
+    </div>
+    <div [matTooltip]="product.description" class="mark_pro">
+      <span>{{ product.description }}</span>
+    </div>
+    <div class="amount">from {{ product.price }}$</div>
+  </div>
+</div>

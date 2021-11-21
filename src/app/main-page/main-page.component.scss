@@ -1,0 +1,48 @@
+.main-page-container {
+  flex: 1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: white;
+  //    background-image: url(../../assets/images/backgrounds/1.jpg);
+}
+
+.main-page-sidenav {
+  width: 240px;
+}
+
+.main-page-sidenav-content {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+}
+
+.wrapper {
+  margin: 6px 0px 0px 10px;
+  // .background-image {
+  //     position: absolute;
+  //     z-index: -2;
+  //     top: 0;
+  //     right: 0;
+  //     left: 0;
+  //     height: 350px;
+  //     background-size: cover;
+  //     background-color: #32a6da;
+  //     background-image: url(../../assets/header-bg.png);
+  //     background-repeat: no-repeat;
+  //     background-position-y: -169px;
+  // }
+}
+
+#sidenav {
+  ::ng-deep .mat-drawer-content {
+    display: contents !important;
+  }
+}
+.page {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 90vh;
+}

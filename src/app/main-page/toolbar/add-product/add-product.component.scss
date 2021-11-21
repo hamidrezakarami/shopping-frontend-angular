@@ -1,0 +1,55 @@
+.backGround {
+  background-image: url(../../../../assets/add-product/background.jpg);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  background-size: cover;
+}
+.body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  padding: 3pc;
+  text-align: center;
+}
+
+.input-form {
+  padding: 28 px 88 px;
+  width: 100%;
+  margin: -13 px;
+}
+
+.describe-form {
+  padding: 28 px 88 px;
+  width: 100%;
+  margin: -13 px;
+}
+.price-form {
+  padding: 28 px 88 px;
+  width: 100%;
+  margin: -13 px;
+}
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
+}
+.describe-form {
+  width: 100%;
+}
+.category-form {
+  width: 100%;
+}
+.amount-form {
+  width: 30%;
+}
